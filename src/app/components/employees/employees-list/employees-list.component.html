@@ -1,0 +1,29 @@
+<div class="container my-5">
+
+    <table class="table table-hover" *ngIf="employees.length > 0">
+        <thead>
+            <tr>
+                
+                <th>Nome completo</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Endereço</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider" >
+            <tr *ngFor="let employee of employees">
+                
+                <td>{{employee.fullName}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.phone}}</td>
+                <td>{{employee.address}}</td>
+                <td><a [routerLink]="['/edit-employee',employee.id]">Edit</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="employees.length == 0">No Employees Found</p>
+</div>
+
+
+
